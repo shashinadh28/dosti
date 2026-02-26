@@ -60,7 +60,7 @@ const LeverageSection = () => (
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: '-60px' }}
-                    transition={{ duration: 0.85, ease: EASE }}
+                    transition={{ duration: 1.1, ease: EASE }}
                     className="relative"
                 >
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -84,7 +84,7 @@ const LeverageSection = () => (
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-60px' }}
-                        transition={{ duration: 0.5, ease: EASE }}
+                        transition={{ duration: 0.8, ease: EASE }}
                     >
                         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-50 border border-green-200 text-[#2D6A27] text-xs font-bold tracking-wide uppercase">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#2D6A27] animate-pulse" />
@@ -99,7 +99,7 @@ const LeverageSection = () => (
                         initial={{ opacity: 0, y: 22 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-60px' }}
-                        transition={{ duration: 0.6, ease: EASE, delay: 0.08 }}
+                        transition={{ duration: 0.85, ease: EASE, delay: 0.15 }}
                     >
                         Leverage <span className="text-[#F5A023]">Global Talent</span>{' '}
                         for Your Growth
@@ -111,7 +111,7 @@ const LeverageSection = () => (
                         initial={{ opacity: 0, y: 18 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-60px' }}
-                        transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
+                        transition={{ duration: 0.85, ease: EASE, delay: 0.25 }}
                     >
                         Dhosti connects ambitious companies with world-class professionals.
                         Our global network and deep industry expertise ensure you get the
@@ -128,7 +128,7 @@ const LeverageSection = () => (
                                 initial={{ opacity: 0, x: 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true, margin: '-60px' }}
-                                transition={{ duration: 0.5, ease: EASE, delay: 0.22 + i * 0.1 }}
+                                transition={{ duration: 0.75, ease: EASE, delay: 0.35 + i * 0.12 }}
                             >
                                 <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#2D6A27]/10 flex items-center justify-center text-[#2D6A27]">
                                     {b.icon}
@@ -147,7 +147,7 @@ const LeverageSection = () => (
                         initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: '-60px' }}
-                        transition={{ duration: 0.55, ease: EASE, delay: 0.65 }}
+                        transition={{ duration: 0.8, ease: EASE, delay: 0.85 }}
                     >
                         <motion.a href="#contact"
                             whileHover={{ scale: 1.04, boxShadow: '0 8px 28px rgba(245,160,35,0.35)' }}

@@ -2,33 +2,69 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 /**
- * CTA — exact clone of reference design:
- *   Dark green outer bg → orange rounded banner
- *   Lady image LEFT (with semi-circle bg behind her)
- *   Content RIGHT: headline, description, email + subscribe
- *   Content changed to "Contact Us" theme
+ * CTA — "Schedule a 15-Min Call" with decorative shapes
+ * Orange banner, lady image left, contact-focused content right
  */
 
 const CTA = () => {
     const [email, setEmail] = useState('');
 
     return (
-        <section className="py-16" style={{ backgroundColor: '#233824' }}>
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section className="py-16 relative overflow-hidden" style={{ backgroundColor: '#233824' }}>
+            {/* Background decorative shapes */}
+            <div className="absolute inset-0 pointer-events-none">
+                <motion.div
+                    className="absolute -top-10 -left-10 w-40 h-40 rounded-full border-2 border-[#F5A023]/15"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+                />
+                <motion.div
+                    className="absolute top-8 right-[15%] w-20 h-20 rounded-full border border-white/8"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 5, repeat: Infinity }}
+                />
+                <motion.div
+                    className="absolute bottom-6 left-[20%] w-3 h-3 rounded-full bg-[#F5A023]/20"
+                    animate={{ y: [-10, 10, -10] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                />
+                <motion.div
+                    className="absolute top-[40%] right-8 w-6 h-6 rotate-45 border border-[#F5A023]/15"
+                    animate={{ rotate: [45, 135, 225, 315, 405] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                />
+                <motion.div
+                    className="absolute bottom-10 right-[30%] w-16 h-16 rounded-full border border-white/5"
+                    animate={{ scale: [0.8, 1.1, 0.8] }}
+                    transition={{ duration: 6, repeat: Infinity }}
+                />
+            </div>
 
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
                 <motion.div
                     className="relative rounded-3xl overflow-hidden"
                     style={{ background: '#F5A023' }}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
+                    transition={{ duration: 0.8 }}
                 >
+                    {/* Decorative shapes inside banner */}
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                        <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full border-2 border-white/15" />
+                        <div className="absolute bottom-4 right-[20%] w-20 h-20 rounded-full border border-white/10" />
+                        <div className="absolute top-[50%] left-[35%] w-4 h-4 rounded-full bg-white/10" />
+                        <motion.div
+                            className="absolute top-6 right-[40%] w-3 h-3 rotate-45 bg-white/15"
+                            animate={{ rotate: [45, 405] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+                        />
+                    </div>
+
                     <div className="flex flex-col md:flex-row items-stretch" style={{ minHeight: '300px' }}>
 
-                        {/* LEFT — Lady image with semi-circle behind */}
+                        {/* Left — Lady image with semi-circle */}
                         <div className="md:w-[38%] relative flex items-end justify-center">
-                            {/* Semi-circle bg behind the person — matching reference */}
                             <div
                                 className="absolute bottom-0 left-1/2 -translate-x-1/2"
                                 style={{
@@ -45,17 +81,17 @@ const CTA = () => {
                             />
                         </div>
 
-                        {/* RIGHT — Content */}
-                        <div className="md:w-[62%] p-8 md:p-10 md:pl-4 flex flex-col justify-center">
+                        {/* Right — Contact content */}
+                        <div className="md:w-[62%] p-8 md:p-10 md:pl-4 flex flex-col justify-center relative z-10">
                             <motion.h2
                                 className="font-display font-bold text-white leading-tight mb-3"
                                 style={{ fontSize: 'clamp(1.5rem, 2.8vw, 2.1rem)' }}
                                 initial={{ opacity: 0, x: 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.1 }}
+                                transition={{ duration: 0.7, delay: 0.1 }}
                             >
-                                Ready to Power up your<br />Savings and Reliability?
+                                Schedule a Free<br />15-Minute Consultation
                             </motion.h2>
 
                             <motion.p
@@ -63,19 +99,19 @@ const CTA = () => {
                                 initial={{ opacity: 0, x: 30 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.2 }}
+                                transition={{ duration: 0.7, delay: 0.2 }}
                             >
-                                Get in touch with us today. Our team is ready to help you
-                                find the perfect global talent for your business needs.
+                                Let's discuss how Dhosti can help you find the perfect global talent.
+                                Drop your email and our team will reach out within 24 hours.
                             </motion.p>
 
-                            {/* Email + Subscribe — matching reference exactly */}
+                            {/* Email + Subscribe */}
                             <motion.div
                                 className="flex max-w-md"
                                 initial={{ opacity: 0, y: 16 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.6, delay: 0.3 }}
+                                transition={{ duration: 0.7, delay: 0.3 }}
                             >
                                 <input
                                     type="email"

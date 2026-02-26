@@ -1,9 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 /**
  * Footer — real Dhosti contact info
- * 4-column: Brand | Quick Links | Explore | Contact
+ * Only LinkedIn social media
  */
 
 const Footer = () => (
@@ -35,25 +34,22 @@ const Footer = () => (
                         and empower you with the knowledge to embark.
                     </p>
 
-                    {/* Social icons */}
+                    {/* Only LinkedIn */}
                     <div className="flex gap-3 mt-4">
-                        {[
-                            { label: 'Fb', icon: 'F' },
-                            { label: 'Tw', icon: '𝕏' },
-                            { label: 'Ig', icon: '◉' },
-                            { label: 'Li', icon: 'in' },
-                        ].map(s => (
-                            <a key={s.label} href="#"
-                                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:text-[#F5A023] hover:bg-[#F5A023]/15 transition-all text-xs font-bold">
-                                {s.icon}
-                            </a>
-                        ))}
+                        <a
+                            href="https://www.linkedin.com/company/dhosti-global-workforce/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/50 hover:text-[#F5A023] hover:bg-[#F5A023]/15 transition-all text-xs font-bold"
+                        >
+                            in
+                        </a>
                     </div>
                 </div>
 
-                {/* Quick Links */}
+                {/* Services */}
                 <div>
-                    <h4 className="font-display text-white font-semibold text-sm mb-4 tracking-wide">Quick Links</h4>
+                    <h4 className="font-display text-white font-semibold text-sm mb-4 tracking-wide">Services</h4>
                     <ul className="space-y-2.5">
                         {['Direct Hire Solutions', 'Recruitment Expertise', 'Temp-to-Hire', 'Temporary Staffing', 'Executive Search', 'Contract Staffing'].map(l => (
                             <li key={l}>
@@ -75,7 +71,7 @@ const Footer = () => (
                     </ul>
                 </div>
 
-                {/* Get in Touch — real contact info */}
+                {/* Get in Touch */}
                 <div>
                     <h4 className="font-display text-white font-semibold text-sm mb-4 tracking-wide">Get in Touch</h4>
                     <ul className="space-y-4">

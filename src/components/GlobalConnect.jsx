@@ -75,7 +75,7 @@ const GlobalConnect = () => {
                         initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        transition={{ duration: 0.8 }}
                     >
                         <span className="w-1.5 h-1.5 rounded-full bg-[#F5A023] animate-pulse" />
                         Global Reach
@@ -87,7 +87,7 @@ const GlobalConnect = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.08 }}
+                        transition={{ duration: 0.9, delay: 0.12 }}
                     >
                         Connecting Global Businesses To India's{' '}
                         <span className="text-[#F5A023]">Educated & Motivated Talent</span>
@@ -98,7 +98,7 @@ const GlobalConnect = () => {
                         initial={{ opacity: 0, y: 16 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.55, delay: 0.16 }}
+                        transition={{ duration: 0.8, delay: 0.22 }}
                     >
                         Our extensive network spans across continents, bridging the gap between
                         international businesses and India's world-class talent pool.
@@ -113,7 +113,7 @@ const GlobalConnect = () => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 1.1, delay: 0.25 }}
                 >
                     <img
                         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
@@ -149,7 +149,7 @@ const GlobalConnect = () => {
                                     strokeWidth="2"
                                     initial={{ pathLength: 0, opacity: 0 }}
                                     animate={isInView ? { pathLength: 1, opacity: 1 } : {}}
-                                    transition={{ duration: 1.2, delay: i * 0.15, ease: 'easeOut' }}
+                                    transition={{ duration: 1.6, delay: i * 0.2, ease: 'easeOut' }}
                                 />
                                 {/* Start dot */}
                                 <motion.circle

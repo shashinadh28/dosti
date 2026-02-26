@@ -4,7 +4,7 @@ import WorldMap from './ui/WorldMap';
 
 const EASE = [0.22, 1, 0.36, 1];
 
-const fadeUp = (delay = 0, dur = 0.75) => ({
+const fadeUp = (delay = 0, dur = 1.0) => ({
     initial: { opacity: 0, y: 32 },
     animate: { opacity: 1, y: 0, transition: { duration: dur, ease: EASE, delay } },
 });
@@ -87,10 +87,10 @@ const Hero = () => (
 
                     <motion.div className="flex items-center gap-3" {...fadeUp(0.56)}>
                         <div>
-                            <p className="text-white font-bold text-sm mb-1">Trusted By 5,789 Users</p>
+                            <p className="text-white font-bold text-sm mb-1">Trusted By Our Clients</p>
                             <div className="flex items-center gap-2">
                                 <Stars count={4} />
-                                <span className="text-white/55 text-xs font-medium">4K Happy Client</span>
+                                <span className="text-white/55 text-xs font-medium">Happy Clients</span>
                             </div>
                         </div>
                     </motion.div>

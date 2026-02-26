@@ -67,7 +67,7 @@ const HiringProcess = () => {
                                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                                 viewport={{ once: true, amount: 0.3 }}
-                                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                                transition={{ duration: 0.85, delay: index * 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
                                 whileHover={{ y: -8, transition: { duration: 0.3 } }}>
                                 <div className="relative mb-6 flex justify-center">
                                     <div className="relative">

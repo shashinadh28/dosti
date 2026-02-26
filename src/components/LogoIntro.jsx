@@ -265,9 +265,9 @@ const LogoIntro = ({ logoImage = '/intro_animation/globe.png', onComplete }) => 
                         <motion.p
                             style={{
                                 fontFamily: "'Inter', 'Space Grotesk', sans-serif",
-                                fontWeight: 500,
+                                fontWeight: 600,
                                 color: '#2D6A27',
-                                fontSize: 'clamp(8px, 0.9vw, 11px)',
+                                fontSize: 'clamp(10px, 1.1vw, 14px)',
                                 letterSpacing: '0.25em',
                                 textAlign: 'center',
                                 textTransform: 'uppercase',
