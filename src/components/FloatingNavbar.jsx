@@ -65,6 +65,15 @@ const FloatingNavbar = () => {
     const openDD = (label) => { clearTimeout(dropdownTimer.current); setDropdownOpen(label); };
     const closeDD = () => { dropdownTimer.current = setTimeout(() => setDropdownOpen(null), 150); };
 
+    const handleNavClick = (e, href) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const id = href.slice(1);
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <div className="relative" style={{ height: `${BAR_H}px` }}>
 
@@ -127,7 +136,7 @@ const FloatingNavbar = () => {
                                         <div className="relative" onMouseEnter={() => openDD(link.label)} onMouseLeave={closeDD}>
                                             <a
                                                 href={link.href}
-                                                onClick={() => setActive(link.label)}
+                                                onClick={(e) => { handleNavClick(e, link.href); setActive(link.label); }}
                                                 className={`px-4 text-sm font-semibold whitespace-nowrap transition-colors duration-200 flex items-center gap-1
                           ${active === link.label ? 'text-[#F5A023]' : 'text-gray-600 hover:text-[#2D6A27]'}`}
                                             >
@@ -168,7 +177,8 @@ const FloatingNavbar = () => {
                                             </AnimatePresence>
                                         </div>
                                     ) : (
-                                        <a href={link.href} onClick={() => setActive(link.label)}
+                                        <a href={link.href}
+                                            onClick={(e) => { handleNavClick(e, link.href); setActive(link.label); }}
                                             className={`px-4 text-sm font-semibold whitespace-nowrap transition-colors duration-200
                         ${active === link.label ? 'text-[#F5A023]' : 'text-gray-600 hover:text-[#2D6A27]'}`}>
                                             {link.label}
@@ -224,7 +234,7 @@ const FloatingNavbar = () => {
                                                                 </Link>
                                                             ) : (
                                                                 <a key={sub.label} href={sub.href}
-                                                                    onClick={() => { setMenuOpen(false); setMobileOpenDD(null); setActive(sub.label); }}
+                                                                    onClick={(e) => { handleNavClick(e, sub.href); setMenuOpen(false); setMobileOpenDD(null); setActive(sub.label); }}
                                                                     className="block px-4 py-2 rounded-lg text-sm text-gray-500 hover:text-[#F5A023] hover:bg-orange-50">
                                                                     ↳ {sub.label}
                                                                 </a>
@@ -240,7 +250,7 @@ const FloatingNavbar = () => {
                                             {link.label}
                                         </Link>
                                     ) : (
-                                        <a href={link.href} onClick={() => { setMenuOpen(false); setActive(link.label); }}
+                                        <a href={link.href} onClick={(e) => { handleNavClick(e, link.href); setMenuOpen(false); setActive(link.label); }}
                                             className={`block px-3 py-2.5 rounded-lg text-sm font-semibold ${active === link.label ? 'text-[#F5A023] bg-orange-50' : 'text-gray-700 hover:bg-green-50 hover:text-[#2D6A27]'}`}>
                                             {link.label}
                                         </a>

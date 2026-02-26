@@ -87,18 +87,39 @@ const SERVICES = [
 ];
 
 /* ── Single stacking card ── */
+const serviceCardStyles = `
+    .service-sticky-card {
+        height: 100svh;
+    }
+    @media (max-width: 640px) {
+        .service-sticky-card { height: auto; min-height: 100svh; padding: 20px 0; }
+        .service-card-inner {
+            min-height: unset !important;
+            padding: 28px 20px !important;
+            width: 95% !important;
+        }
+        .service-card-body { flex-direction: column !important; }
+        .service-card-left { flex: unset !important; width: 100% !important; }
+        .service-card-right { min-height: 200px !important; width: 100% !important; flex: unset !important; margin-top: 16px; position: relative !important; }
+        .service-card-right img { position: static !important; width: 100% !important; height: 200px !important; object-fit: cover; border-radius: 12px; }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+        .service-card-inner {
+            width: 95% !important;
+            min-height: 420px !important;
+            padding: 32px 28px !important;
+        }
+        .service-card-right { min-height: 220px !important; }
+    }
+`;
+
 const ServiceCard = ({ service, i, total, scrollYProgress }) => {
     const cardRef = useRef(null);
 
-    // Each card contributes 1/total of the scroll range to "stick"
     const rangeStart = i / total;
-    const rangeEnd = (i + 1) / total;
-
-    // Card scales down as subsequent cards stack on top
     const targetScale = 1 - (total - i) * 0.04;
     const scale = useTransform(scrollYProgress, [rangeStart, 1], [1, targetScale]);
 
-    // Image parallax within its own card
     const { scrollYProgress: cardScroll } = useScroll({
         target: cardRef,
         offset: ['start end', 'start start'],
@@ -111,30 +132,6 @@ const ServiceCard = ({ service, i, total, scrollYProgress }) => {
             className="service-sticky-card"
             style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: 0 }}
         >
-            <style>{`
-                .service-sticky-card {
-                    height: 100svh;
-                }
-                @media (max-width: 640px) {
-                    .service-sticky-card { height: auto; min-height: 100svh; padding: 20px 0; }
-                    .service-card-inner {
-                        flex-direction: column !important;
-                        min-height: unset !important;
-                        padding: 28px 20px !important;
-                        width: 95% !important;
-                    }
-                    .service-card-left { flex: unset !important; width: 100% !important; }
-                    .service-card-right { min-height: 180px !important; width: 100% !important; flex: unset !important; margin-top: 16px; }
-                }
-                @media (min-width: 641px) and (max-width: 900px) {
-                    .service-card-inner {
-                        width: 95% !important;
-                        min-height: 420px !important;
-                        padding: 32px 28px !important;
-                    }
-                    .service-card-right { min-height: 220px !important; }
-                }
-            `}</style>
             <motion.div
                 className="service-card-inner"
                 style={{
@@ -144,11 +141,11 @@ const ServiceCard = ({ service, i, total, scrollYProgress }) => {
                     willChange: 'transform',
                     maxWidth: 1000,
                     width: '90%',
-                    minHeight: 520,
+                    minHeight: 480,
                     borderRadius: 24,
-                    padding: '40px 40px',
+                    padding: '36px 40px 40px',
                     display: 'flex',
-                    flexDirection: 'row',
+                    flexDirection: 'column',
                     position: 'relative',
                     overflow: 'hidden',
                     boxShadow: `0 24px 80px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08)`,
@@ -164,39 +161,40 @@ const ServiceCard = ({ service, i, total, scrollYProgress }) => {
 
                 {/* Card number */}
                 <div style={{
-                    position: 'absolute', top: 24, right: 32,
+                    position: 'absolute', top: 20, right: 28,
                     fontSize: 12, fontWeight: 700, letterSpacing: '0.1em',
                     color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase',
                 }}>
                     {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
                 </div>
 
-                {/* Title */}
+                {/* Title — centered at top */}
                 <h3 style={{
-                    fontSize: 'clamp(1.6rem, 3vw, 2.4rem)',
-                    fontWeight: 800, color: '#fff', marginBottom: 32,
-                    textAlign: 'center', letterSpacing: '-0.02em',
+                    fontSize: 'clamp(1.5rem, 3vw, 2.2rem)',
+                    fontWeight: 800, color: '#fff', marginBottom: 28,
+                    textAlign: 'center', letterSpacing: '-0.02em', lineHeight: 1.2,
+                    flexShrink: 0,
                 }}>
                     {service.title}
-                    <span style={{ display: 'block', width: 40, height: 3, background: service.accent, borderRadius: 2, margin: '12px auto 0' }} />
+                    <span style={{ display: 'block', width: 40, height: 3, background: service.accent, borderRadius: 2, margin: '10px auto 0' }} />
                 </h3>
 
                 {/* Two-col layout */}
-                <div style={{
+                <div className="service-card-body" style={{
                     display: 'flex', gap: 32, flex: 1,
                     flexDirection: 'row',
                     alignItems: 'center',
                 }}>
-                    {/* Left: bullets + CTA */}
-                    <div className="service-card-left" style={{ flex: '0 0 38%', display: 'flex', flexDirection: 'column', gap: 12 }}>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                    {/* Left: bullets (left-aligned) + CTA */}
+                    <div className="service-card-left" style={{ flex: '0 0 40%', display: 'flex', flexDirection: 'column', gap: 12 }}>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 12 }}>
                             {service.description.map((point, j) => (
-                                <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: 'rgba(255,255,255,0.82)', lineHeight: 1.6 }}>
+                                <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, textAlign: 'left' }}>
                                     <span style={{
-                                        flexShrink: 0, width: 6, height: 6, borderRadius: '50%',
-                                        background: service.accent, marginTop: 8,
+                                        flexShrink: 0, width: 7, height: 7, borderRadius: '50%',
+                                        background: service.accent, marginTop: 7,
                                     }} />
-                                    {point}
+                                    <span>{point}</span>
                                 </li>
                             ))}
                         </ul>
@@ -205,11 +203,11 @@ const ServiceCard = ({ service, i, total, scrollYProgress }) => {
                             whileTap={{ scale: 0.97 }}
                             style={{
                                 display: 'inline-flex', alignItems: 'center', gap: 8,
-                                marginTop: 20, width: 'fit-content',
-                                padding: '11px 22px', borderRadius: 999,
+                                marginTop: 24, width: 'fit-content',
+                                padding: '11px 24px', borderRadius: 999,
                                 background: '#fff', color: '#0f1623',
                                 fontWeight: 700, fontSize: 14, border: 'none',
-                                cursor: 'pointer', transition: 'background 0.2s',
+                                cursor: 'pointer',
                             }}
                         >
                             Learn More
@@ -220,7 +218,7 @@ const ServiceCard = ({ service, i, total, scrollYProgress }) => {
                     </div>
 
                     {/* Right: image */}
-                    <div className="service-card-right" style={{ flex: 1, borderRadius: 16, overflow: 'hidden', position: 'relative', minHeight: 300 }}>
+                    <div className="service-card-right" style={{ flex: 1, borderRadius: 16, overflow: 'hidden', position: 'relative', minHeight: 280 }}>
                         <motion.div style={{ scale: imageScale, width: '100%', height: '100%', position: 'absolute', inset: 0 }}>
                             <img
                                 src={service.src}
@@ -246,6 +244,7 @@ const ServicesSection = () => {
 
     return (
         <section id="services" ref={containerRef} style={{ background: '#fff' }}>
+            <style>{serviceCardStyles}</style>
 
             {/* Header */}
             <div style={{

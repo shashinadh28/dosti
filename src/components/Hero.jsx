@@ -40,10 +40,11 @@ const Hero = () => (
         <div className="absolute bottom-[-40px] right-[10%] w-[220px] h-[220px] rounded-full bg-[#F5A023] opacity-[0.07] blur-[80px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
-            <div className="grid lg:grid-cols-2 gap-10 items-center">
+            {/* Mobile: stack text then single image; Desktop: 2-col grid */}
+            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10 items-center">
 
                 {/* LEFT: Copy */}
-                <div>
+                <div className="text-center lg:text-left">
                     <motion.div {...fadeUp(0.1)}>
                         <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/80 text-xs font-semibold tracking-wide mb-5">
                             Staffing Power Your Success
@@ -52,21 +53,21 @@ const Hero = () => (
 
                     <motion.h1
                         className="font-display font-black text-white mb-5"
-                        style={{ fontSize: 'clamp(2.4rem, 4.8vw, 3.6rem)', lineHeight: 1.08, fontFamily: "'DM Sans', 'Inter', sans-serif" }}
+                        style={{ fontSize: 'clamp(2rem, 4.8vw, 3.6rem)', lineHeight: 1.08, fontFamily: "'DM Sans', 'Inter', sans-serif" }}
                         {...fadeUp(0.2)}
                     >
                         Growth Exceptional Talent Lets Build Success Together
                     </motion.h1>
 
                     <motion.p
-                        className="text-white/60 text-sm leading-relaxed mb-7 max-w-[430px]"
+                        className="text-white/60 text-sm leading-relaxed mb-7 max-w-[430px] mx-auto lg:mx-0"
                         {...fadeUp(0.34)}
                     >
                         Our tailored staffing solutions streamline the hiring process saving you time
                         and resources while ensuring the perfect fit.
                     </motion.p>
 
-                    <motion.div className="flex flex-wrap gap-3 mb-8" {...fadeUp(0.46)}>
+                    <motion.div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8" {...fadeUp(0.46)}>
                         <motion.a
                             href="#jobs"
                             whileHover={{ scale: 1.04, boxShadow: '0 8px 28px rgba(245,160,35,0.45)' }}
@@ -85,7 +86,7 @@ const Hero = () => (
                         </motion.a>
                     </motion.div>
 
-                    <motion.div className="flex items-center gap-3" {...fadeUp(0.56)}>
+                    <motion.div className="flex items-center justify-center lg:justify-start gap-3" {...fadeUp(0.56)}>
                         <div>
                             <p className="text-white font-bold text-sm mb-1">Trusted By Our Clients</p>
                             <div className="flex items-center gap-2">
@@ -96,9 +97,20 @@ const Hero = () => (
                     </motion.div>
                 </div>
 
-                {/* RIGHT: Fixed-size image grid */}
+                {/* Mobile: single image */}
                 <motion.div
-                    className="flex gap-4 justify-center lg:justify-end"
+                    className="lg:hidden w-full mt-6"
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE, delay: 0.3 } }}
+                >
+                    <div className="w-full h-[280px] sm:h-[340px] rounded-2xl overflow-hidden">
+                        <img src="/landing_page/employe1.webp" alt="Team" className="w-full h-full object-cover" />
+                    </div>
+                </motion.div>
+
+                {/* Desktop: Fixed-size image grid */}
+                <motion.div
+                    className="hidden lg:flex gap-4 justify-end"
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0, transition: { duration: 0.9, ease: EASE, delay: 0.3 } }}
                 >
