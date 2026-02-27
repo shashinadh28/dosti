@@ -141,12 +141,11 @@ const WhyChooseUsSection = () => {
                                         className="w-14 h-14 rounded-xl flex items-center justify-center transition-all duration-300"
                                         style={{
                                             background: isHovered ? 'rgba(255,255,255,0.15)' : `${accentColor}20`,
-                                            border: `1px solid ${isHovered ? 'rgba(255,255,255,0.2)' : accentColor + '30'}`,
                                         }}
                                     >
                                         <IconComponent
                                             size={26}
-                                            style={{ color: isHovered ? '#ffffff' : accentColor }}
+                                            style={{ color: isHovered ? '#ffffff' : accentColor, opacity: 1 }}
                                             className="transition-colors duration-300"
                                         />
                                     </div>

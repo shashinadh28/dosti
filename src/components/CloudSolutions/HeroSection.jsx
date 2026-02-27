@@ -44,7 +44,7 @@ const HeroSection = () => {
                     transition={{ duration: f.dur, repeat: Infinity, ease: 'easeInOut', delay: i * 0.8 }} />
             ))}
 
-            <div className="w-full max-w-[1300px] mx-auto px-6 sm:px-10 md:px-14 py-20 md:py-24 relative z-10">
+            <div className="w-full max-w-[1300px] mx-auto px-6 sm:px-10 md:px-14 py-8 md:py-12 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
                     {/* LEFT — text */}
@@ -100,13 +100,13 @@ const HeroSection = () => {
                             <a
                                 href="#services-section"
                                 onClick={e => { e.preventDefault(); document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' }); }}
-                                className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-xl text-white text-base transition-all duration-300 hover:-translate-y-1 group"
+                                className="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold rounded-xl text-white text-base transition-all duration-300 hover:-translate-y-1 group"
                                 style={{ background: 'linear-gradient(135deg, #2563eb, #0891b2)', boxShadow: '0 4px 24px rgba(37,99,235,0.35)' }}>
                                 Explore Services
                                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                             </a>
                             <a href="https://calendly.com/deepak-teja/introduction" target="_blank" rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-8 py-4 font-bold rounded-xl text-base bg-white border-2 border-blue-200 text-gray-700 hover:border-blue-400 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                                className="inline-flex items-center justify-center gap-2 px-8 py-4 font-bold rounded-xl text-base bg-white border-2 border-blue-200 text-gray-700 hover:border-blue-400 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                                 View Case Studies
                             </a>
                         </motion.div>
@@ -125,7 +125,7 @@ const HeroSection = () => {
                                 animate={{ y: [0, -12, 0] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}>
                                 <img
-                                    src="/Cloud_Solutions_Page/cloud-hero2.webp"
+                                    src="/Cloud_Solutions_Page/cloud-hero.webp"
                                     alt="Cloud Solutions"
                                     className="w-full object-contain drop-shadow-2xl"
                                     style={{ filter: 'drop-shadow(0 20px 60px rgba(37,99,235,0.2))' }}
@@ -134,25 +134,6 @@ const HeroSection = () => {
                         </motion.div>
                     </div>
                 </div>
-
-                {/* Tech logos strip */}
-                <motion.div
-                    className="mt-20 flex flex-wrap justify-center items-center gap-8 md:gap-12"
-                    initial={{ opacity: 0 }}
-                    animate={textAnimated ? { opacity: 1 } : {}}
-                    transition={{ duration: 1, delay: 1 }}
-                >
-                    <p className="w-full text-center text-xs text-gray-400 uppercase tracking-widest mb-2 font-semibold">Powered by</p>
-                    {techLogos.map((logo, i) => (
-                        <motion.div key={i} whileHover={{ scale: 1.15, filter: 'grayscale(0%)' }}
-                            className="cursor-pointer transition-all duration-300 opacity-60 grayscale hover:opacity-100">
-                            <img src={logo.path} alt={logo.name}
-                                className="h-10 sm:h-12 w-auto object-contain"
-                                style={{ maxWidth: logo.name === 'MySQL' ? 80 : 60 }}
-                                onError={e => { e.currentTarget.style.display = 'none'; }} />
-                        </motion.div>
-                    ))}
-                </motion.div>
             </div>
         </section>
     );
