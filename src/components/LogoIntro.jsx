@@ -10,25 +10,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 const EASE = [0.22, 1, 0.36, 1];
 const SESSION_KEY = 'dhosti_intro_shown';
 
-/* Floating decorative elements */
+/* Floating decorative elements — kept well away from center logo */
 const FLOATERS = [
     { x: '8%', y: '15%', size: 60, color: '#F5A023', opacity: 0.15, dur: 5, delay: 0 },
     { x: '85%', y: '20%', size: 40, color: '#2D6A27', opacity: 0.12, dur: 6, delay: 1 },
     { x: '12%', y: '75%', size: 35, color: '#2D6A27', opacity: 0.1, dur: 7, delay: 0.5 },
     { x: '90%', y: '70%', size: 50, color: '#F5A023', opacity: 0.12, dur: 5.5, delay: 1.5 },
-    { x: '50%', y: '8%', size: 25, color: '#F5A023', opacity: 0.2, dur: 4, delay: 0.3 },
     { x: '30%', y: '85%', size: 30, color: '#2D6A27', opacity: 0.08, dur: 6.5, delay: 0.8 },
     { x: '70%', y: '88%', size: 22, color: '#F5A023', opacity: 0.15, dur: 5, delay: 1.2 },
-    { x: '20%', y: '40%', size: 18, color: '#2D6A27', opacity: 0.1, dur: 4.5, delay: 0.6 },
-    { x: '78%', y: '45%', size: 28, color: '#F5A023', opacity: 0.1, dur: 5.8, delay: 0.9 },
 ];
 
-/* Small floating plus/cross shapes */
+/* Small floating plus/cross shapes — only edges, away from logo center */
 const SHAPES = [
-    { x: '15%', y: '30%', rotate: 45, color: '#F5A023', opacity: 0.2 },
-    { x: '82%', y: '35%', rotate: 0, color: '#2D6A27', opacity: 0.15 },
-    { x: '25%', y: '65%', rotate: 30, color: '#F5A023', opacity: 0.12 },
-    { x: '75%', y: '60%', rotate: -20, color: '#2D6A27', opacity: 0.18 },
+    { x: '6%', y: '30%', rotate: 45, color: '#F5A023', opacity: 0.2 },
+    { x: '88%', y: '35%', rotate: 0, color: '#2D6A27', opacity: 0.15 },
+    { x: '7%', y: '65%', rotate: 30, color: '#F5A023', opacity: 0.12 },
+    { x: '90%', y: '60%', rotate: -20, color: '#2D6A27', opacity: 0.18 },
     { x: '45%', y: '90%', rotate: 60, color: '#F5A023', opacity: 0.1 },
 ];
 
@@ -244,18 +241,20 @@ const LogoIntro = ({ logoImage = '/intro_animation/globe.png', onComplete }) => 
                                     sti
                                 </motion.span>
 
+                                {/* Orange dot — sits above the 'i' (rightmost letter in 'sti') */}
                                 <motion.div
                                     className="absolute rounded-full bg-[#F5A023]"
                                     style={{
-                                        width: 'clamp(12px, 1.8vw, 22px)',
-                                        height: 'clamp(12px, 1.8vw, 22px)',
-                                        top: '-3%',
-                                        right: '2%',
+                                        width: 'clamp(8px, 1.1vw, 14px)',
+                                        height: 'clamp(8px, 1.1vw, 14px)',
+                                        bottom: '100%',
+                                        marginBottom: 'clamp(4px, 0.6vw, 8px)',
+                                        right: 'clamp(2px, 0.5vw, 6px)',
                                     }}
                                     initial={{ scale: 0 }}
                                     animate={
                                         phase === 'step1' ? { scale: 0 }
-                                            : { scale: 1, transition: { duration: 0.4, ease: 'backOut', delay: 0.8 } }
+                                            : { scale: 1, transition: { duration: 0.4, ease: 'backOut', delay: 0.85 } }
                                     }
                                 />
                             </div>

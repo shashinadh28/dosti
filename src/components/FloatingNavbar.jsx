@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 /**
@@ -35,7 +35,16 @@ const NAV_LINKS = [
     {
         label: 'Services',
         href: '#services',
-        dropdown: SERVICE_NAMES.map(name => ({ label: name, href: '#services' })),
+        dropdown: SERVICE_NAMES.map(name => {
+            if (name === 'IT Outsourcing') return { label: name, href: '/it-outsourcing', isRoute: true };
+            if (name === 'Healthcare BPO') return { label: name, href: '/healthcare-bpo', isRoute: true };
+            if (name === 'US Taxation') return { label: name, href: '/us-taxation', isRoute: true };
+            if (name === 'Cloud Solutions') return { label: name, href: '/cloud-solutions', isRoute: true };
+            if (name === 'SaaS Experts') return { label: name, href: '/saas-experts', isRoute: true };
+            if (name === 'AI Solutions') return { label: name, href: '/ai-solutions', isRoute: true };
+            if (name === 'Virtual Assistant') return { label: name, href: '/virtual-assistant', isRoute: true };
+            return { label: name, href: '#services' };
+        }),
     },
 ];
 
@@ -44,6 +53,7 @@ const BAR_H = 70;
 const CARD_TOP = BAR_H - CARD_H / 2;
 
 const FloatingNavbar = () => {
+    const navigate = useNavigate();
     const [active, setActive] = useState('Home');
     const [menuOpen, setMenuOpen] = useState(false);
     const [navVisible, setNavVisible] = useState(true);
@@ -69,8 +79,20 @@ const FloatingNavbar = () => {
         if (href.startsWith('#')) {
             e.preventDefault();
             const id = href.slice(1);
-            const el = document.getElementById(id);
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // If we're on the home page, just scroll
+            if (window.location.pathname === '/') {
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                else window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                // Navigate to home and then scroll after page loads
+                navigate('/');
+                setTimeout(() => {
+                    const el = document.getElementById(id);
+                    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    else window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 400);
+            }
         }
     };
 
@@ -126,8 +148,8 @@ const FloatingNavbar = () => {
                         transition={{ duration: 0.22, ease: 'easeOut' }}
                     >
                         <div
-                            className="flex items-center justify-center bg-white rounded-2xl px-6"
-                            style={{ height: CARD_H, minWidth: '820px', boxShadow: '0 8px 30px rgba(0,0,0,0.13), 0 2px 8px rgba(0,0,0,0.07)' }}
+                            className="flex items-center justify-center rounded-2xl px-6"
+                            style={{ height: CARD_H, minWidth: '820px', background: '#f0f2f4', boxShadow: '0 8px 32px rgba(0,0,0,0.16), 0 2px 10px rgba(0,0,0,0.10)' }}
                         >
                             {NAV_LINKS.map((link, idx) => (
                                 <React.Fragment key={link.label}>

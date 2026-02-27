@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 /**
  * ServicesSection — stacking scroll cards (adapted from Next.js version)
@@ -198,23 +199,52 @@ const ServiceCard = ({ service, i, total, scrollYProgress }) => {
                                 </li>
                             ))}
                         </ul>
-                        <motion.button
-                            whileHover={{ scale: 1.05, boxShadow: `0 6px 20px ${service.accent}60` }}
-                            whileTap={{ scale: 0.97 }}
-                            style={{
-                                display: 'inline-flex', alignItems: 'center', gap: 8,
-                                marginTop: 24, width: 'fit-content',
-                                padding: '11px 24px', borderRadius: 999,
-                                background: '#fff', color: '#0f1623',
-                                fontWeight: 700, fontSize: 14, border: 'none',
-                                cursor: 'pointer',
-                            }}
-                        >
-                            Learn More
-                            <svg width="16" height="10" viewBox="0 0 22 12" fill="none">
-                                <path d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z" fill="currentColor" />
-                            </svg>
-                        </motion.button>
+                        {(service.title === 'IT Outsourcing' || service.title === 'Healthcare BPO' || service.title === 'US Taxation' || service.title === 'Cloud Solutions' || service.title === 'SaaS Experts' || service.title === 'AI Solutions') ? (
+                            <Link to={
+                                service.title === 'IT Outsourcing' ? '/it-outsourcing'
+                                    : service.title === 'Healthcare BPO' ? '/healthcare-bpo'
+                                        : service.title === 'US Taxation' ? '/us-taxation'
+                                            : service.title === 'Cloud Solutions' ? '/cloud-solutions'
+                                                : service.title === 'SaaS Experts' ? '/saas-experts'
+                                                    : '/ai-solutions'
+                            }>
+                                <motion.button
+                                    whileHover={{ scale: 1.05, boxShadow: `0 6px 20px ${service.accent}60` }}
+                                    whileTap={{ scale: 0.97 }}
+                                    style={{
+                                        display: 'inline-flex', alignItems: 'center', gap: 8,
+                                        marginTop: 24, width: 'fit-content',
+                                        padding: '11px 24px', borderRadius: 999,
+                                        background: '#fff', color: '#0f1623',
+                                        fontWeight: 700, fontSize: 14, border: 'none',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    Learn More
+                                    <svg width="16" height="10" viewBox="0 0 22 12" fill="none">
+                                        <path d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z" fill="currentColor" />
+                                    </svg>
+                                </motion.button>
+                            </Link>
+                        ) : (
+                            <motion.button
+                                whileHover={{ scale: 1.05, boxShadow: `0 6px 20px ${service.accent}60` }}
+                                whileTap={{ scale: 0.97 }}
+                                style={{
+                                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                                    marginTop: 24, width: 'fit-content',
+                                    padding: '11px 24px', borderRadius: 999,
+                                    background: '#fff', color: '#0f1623',
+                                    fontWeight: 700, fontSize: 14, border: 'none',
+                                    cursor: 'pointer',
+                                }}
+                            >
+                                Learn More
+                                <svg width="16" height="10" viewBox="0 0 22 12" fill="none">
+                                    <path d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z" fill="currentColor" />
+                                </svg>
+                            </motion.button>
+                        )}
                     </div>
 
                     {/* Right: image */}
