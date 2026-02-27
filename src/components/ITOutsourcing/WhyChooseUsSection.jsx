@@ -94,7 +94,7 @@ const WhyChooseUsSection = () => {
                                 <path d="M0 2 Q50 0 100 2" stroke="#FDC700" strokeWidth="3" fill="none" strokeLinecap="round" />
                             </svg>
                         </span>
-                        {' '}Gateway Workforce?
+                        {' '}dhosti?
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
                         Experience the difference of working with India's most elite development talent.

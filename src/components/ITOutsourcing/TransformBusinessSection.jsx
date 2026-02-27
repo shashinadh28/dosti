@@ -59,7 +59,7 @@ const TransformBusinessSection = () => {
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed"
                 >
-                    Gateway Workforce connects you with India's top-tier developers to scale your team efficiently.
+                    dhosti connects you with India's top-tier developers to scale your team efficiently.
                     From custom software development to complete project delivery, our experts ensure you get
                     premium talent at competitive rates with seamless collaboration.
                 </motion.p>

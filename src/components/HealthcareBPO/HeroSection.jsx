@@ -68,7 +68,7 @@ const HeroSection = () => {
                             >
                                 <span className="w-2 h-2 rounded-full bg-[#18B8E5] animate-pulse" />
                                 <span className="text-[#18B8E5] text-sm sm:text-base font-semibold uppercase tracking-widest">
-                                    Gateway Workforce
+                                    dhosti
                                 </span>
                             </motion.div>
                         </div>

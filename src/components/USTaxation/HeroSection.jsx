@@ -84,7 +84,7 @@ const HeroSection = () => {
                             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                         >
                             <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                            <span className="text-red-400 text-sm font-bold uppercase tracking-widest">Gateway Workforce</span>
+                            <span className="text-red-400 text-sm font-bold uppercase tracking-widest">dhosti</span>
                         </motion.div>
 
                         {/* Headline */}

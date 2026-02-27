@@ -37,7 +37,7 @@ const HeroSection = () => {
                             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
                                 style={{ background: '#f3e8ff', borderColor: '#d8b4fe' }}>
                                 <Bot size={14} style={{ color: '#7c3aed' }} />
-                                <span className="text-sm font-semibold" style={{ color: '#6d28d9' }}>Gateway Workforce</span>
+                                <span className="text-sm font-semibold" style={{ color: '#6d28d9' }}>dhosti</span>
                             </div>
                         </motion.div>
 

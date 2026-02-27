@@ -28,7 +28,7 @@ const AboutSection = () => (
                         </span>
                     </h2>
                     <p className="text-gray-600 text-lg leading-relaxed mb-10">
-                        At Gateway Workforce, we empower businesses with end-to-end cloud solutions, specializing in AWS and Azure deployment, migration, and management. Our certified cloud architects and engineers help organizations optimize performance, enhance security, and reduce costs through scalable, high-performance cloud infrastructure.
+                        At dhosti, we empower businesses with end-to-end cloud solutions, specializing in AWS and Azure deployment, migration, and management. Our certified cloud architects and engineers help organizations optimize performance, enhance security, and reduce costs through scalable, high-performance cloud infrastructure.
                     </p>
 
                     {/* Stats */}

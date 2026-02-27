@@ -17,7 +17,7 @@ const WhyChooseSection = () => (
                 <span className="inline-block text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-5"
                     style={{ background: '#0d9488' }}>Why Us</span>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-5" style={{ letterSpacing: '-0.03em' }}>
-                    Why Choose Gateway Workforce
+                    Why Choose dhosti
                     <br />
                     <span className="text-transparent bg-clip-text"
                         style={{ backgroundImage: 'linear-gradient(135deg, #0d9488, #0891b2)' }}>

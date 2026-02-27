@@ -30,7 +30,7 @@ const AboutSection = () => (
                         </span>
                     </h2>
                     <p className="text-gray-600 text-lg leading-relaxed mb-10">
-                        At Gateway Workforce, we build cutting-edge AI solutions that empower enterprises to harness the full potential of artificial intelligence. From custom Large Language Models (LLMs) to intelligent automation and predictive analytics, we deliver tailored AI strategies that drive efficiency, innovation, and competitive advantage.
+                        At dhosti, we build cutting-edge AI solutions that empower enterprises to harness the full potential of artificial intelligence. From custom Large Language Models (LLMs) to intelligent automation and predictive analytics, we deliver tailored AI strategies that drive efficiency, innovation, and competitive advantage.
                     </p>
 
                     {/* Stats */}

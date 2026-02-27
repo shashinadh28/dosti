@@ -26,7 +26,7 @@ const AboutSection = () => (
                         <span style={{ color: '#F35120' }}>Seamless SaaS Solutions</span>
                     </h2>
                     <p className="text-gray-600 text-lg leading-relaxed mb-10">
-                        At Gateway Workforce, we specialize in end-to-end SaaS integration, customization, and optimization for leading platforms including Salesforce, Shopify, and HubSpot. Our certified experts help businesses streamline operations, enhance customer experiences, and drive growth through powerful SaaS solutions tailored to your unique needs.
+                        At dhosti, we specialize in end-to-end SaaS integration, customization, and optimization for leading platforms including Salesforce, Shopify, and HubSpot. Our certified experts help businesses streamline operations, enhance customer experiences, and drive growth through powerful SaaS solutions tailored to your unique needs.
                     </p>
 
                     {/* Stats */}

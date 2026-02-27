@@ -49,7 +49,7 @@ const WhyPartnerSection = () => {
                         Key Benefits
                     </span>
                     <h2 className="text-4xl sm:text-5xl font-black text-gray-900 leading-tight mx-auto max-w-3xl" style={{ letterSpacing: '-0.02em' }}>
-                        Why Partner with Gateway Workforce for{' '}
+                        Why Partner with dhosti for{' '}
                         <span className="relative inline-block">
                             <span className="text-red-600">Taxation & Accounting?</span>
                             <span className="absolute -bottom-1 left-0 w-full h-1 rounded-full bg-red-600 opacity-50" />

@@ -29,13 +29,13 @@ const AccelerateSection = () => (
                 style={{ letterSpacing: '-0.02em', lineHeight: 1.1 }}
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}>
                 Accelerate Your Cloud Journey with{' '}
-                <span className="text-yellow-300">Gateway Workforce</span>
+                <span className="text-yellow-300">dhosti</span>
             </motion.h2>
 
             {/* Subtitle */}
             <motion.p className="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-10 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
-                Whether you're migrating to the cloud, optimizing existing workloads, or managing infrastructure, Gateway Workforce provides reliable, scalable, and secure cloud solutions tailored to your business needs.
+                Whether you're migrating to the cloud, optimizing existing workloads, or managing infrastructure, dhosti provides reliable, scalable, and secure cloud solutions tailored to your business needs.
             </motion.p>
 
             {/* Phone line */}

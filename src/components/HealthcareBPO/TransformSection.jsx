@@ -57,7 +57,7 @@ const TransformSection = () => (
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 }}
             >
-                Gateway Workforce streamlines your healthcare operations with comprehensive BPO services. From medical billing to telehealth support, our experts ensure you maximize revenue while reducing administrative burdens and enhancing patient care.
+                dhosti streamlines your healthcare operations with comprehensive BPO services. From medical billing to telehealth support, our experts ensure you maximize revenue while reducing administrative burdens and enhancing patient care.
             </motion.p>
 
             {/* Call line */}

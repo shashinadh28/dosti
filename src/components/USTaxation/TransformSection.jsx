@@ -38,7 +38,7 @@ const TransformSection = () => (
             {/* Subtitle */}
             <motion.p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.2 }}>
-                Gateway Workforce provides comprehensive US taxation services with precision and expertise. From individual tax preparation to complex business filings, our certified professionals ensure compliance while maximizing your tax benefits and minimizing liabilities.
+                dhosti provides comprehensive US taxation services with precision and expertise. From individual tax preparation to complex business filings, our certified professionals ensure compliance while maximizing your tax benefits and minimizing liabilities.
             </motion.p>
 
             {/* Phone line */}

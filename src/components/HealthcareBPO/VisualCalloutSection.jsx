@@ -75,7 +75,7 @@ const VisualCalloutSection = () => (
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
                         style={{ background: 'rgba(24,184,229,0.1)', border: '1px solid rgba(24,184,229,0.2)' }}>
                         <span className="w-1.5 h-1.5 rounded-full bg-[#18B8E5] animate-pulse" />
-                        <span className="text-[#18B8E5] text-xs font-bold uppercase tracking-widest">The Gateway Advantage</span>
+                        <span className="text-[#18B8E5] text-xs font-bold uppercase tracking-widest">The dhosti Advantage</span>
                     </div>
 
                     <h2 className="text-4xl sm:text-5xl font-black text-slate-800 mb-5 leading-tight" style={{ letterSpacing: '-0.02em' }}>
@@ -86,7 +86,7 @@ const VisualCalloutSection = () => (
                     </h2>
 
                     <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                        By partnering with Gateway Workforce, healthcare providers can focus on delivering quality care while we handle the complexities of billing, coding, and telehealth operations. Our end-to-end solutions ensure faster reimbursements, fewer claim denials, and improved financial performance.
+                        By partnering with dhosti, healthcare providers can focus on delivering quality care while we handle the complexities of billing, coding, and telehealth operations. Our end-to-end solutions ensure faster reimbursements, fewer claim denials, and improved financial performance.
                     </p>
 
                     <ul className="space-y-4 mb-10">

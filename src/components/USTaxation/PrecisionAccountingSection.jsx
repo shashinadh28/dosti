@@ -55,7 +55,7 @@ const PrecisionAccountingSection = () => (
                         {' '}Solutions for Financial Success
                     </h2>
                     <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
-                        At Gateway Workforce, we provide comprehensive US taxation and accounting services tailored for accounting firms, CPAs, and financial professionals. Our expert team ensures accurate bookkeeping, tax compliance, and financial reporting, allowing you to focus on strategic growth while we handle the complexities of numbers and regulations.
+                        At dhosti, we provide comprehensive US taxation and accounting services tailored for accounting firms, CPAs, and financial professionals. Our expert team ensures accurate bookkeeping, tax compliance, and financial reporting, allowing you to focus on strategic growth while we handle the complexities of numbers and regulations.
                     </p>
 
                     {/* Highlights */}

@@ -37,7 +37,7 @@ const HeroSection = () => {
                             >
                                 <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
                                 <span className="text-sky-400 text-sm font-semibold uppercase tracking-widest">
-                                    Gateway Workforce: IT Outsourcing
+                                    dhosti: IT Outsourcing
                                 </span>
                             </motion.div>
                         </div>

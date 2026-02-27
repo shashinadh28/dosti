@@ -54,7 +54,7 @@ const WhyChooseSection = () => (
                     <div className="h-px w-8 bg-[#18B8E5]" />
                 </div>
                 <h2 className="text-4xl sm:text-5xl font-black text-slate-800 leading-tight" style={{ letterSpacing: '-0.02em' }}>
-                    Why Choose Gateway Workforce{' '}
+                    Why Choose dhosti{' '}
                     <br className="hidden sm:block" />
                     for{' '}
                     <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(135deg, #18B8E5, #0ea5e9)' }}>

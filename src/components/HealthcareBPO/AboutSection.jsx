@@ -42,7 +42,7 @@ const AboutSection = () => (
                     </span>
                 </h2>
                 <p className="text-gray-500 text-lg max-w-3xl mx-auto leading-relaxed">
-                    At Gateway Workforce, we provide comprehensive Healthcare BPO services — specializing in end-to-end medical billing and telehealth support. Our solutions help healthcare providers optimize revenue cycles, reduce administrative burdens, and enhance patient care.
+                    At dhosti, we provide comprehensive Healthcare BPO services — specializing in end-to-end medical billing and telehealth support. Our solutions help healthcare providers optimize revenue cycles, reduce administrative burdens, and enhance patient care.
                 </p>
             </motion.div>
 

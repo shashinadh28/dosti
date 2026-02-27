@@ -49,10 +49,10 @@ const LogoIntro = ({ logoImage = '/intro_animation/globe.png', onComplete }) => 
 
     if (skip) return null;
 
-    /* Bigger sizes */
-    const FONT = 'clamp(64px, 10.5vw, 130px)';
-    const GLOBE_BIG = 'clamp(90px, 13vw, 155px)';
-    const GLOBE_SMALL = 'clamp(54px, 8.5vw, 105px)';
+    /* Bigger sizes - increased minimum values for mobile devices */
+    const FONT = 'clamp(85px, 10.5vw, 130px)';
+    const GLOBE_BIG = 'clamp(115px, 13vw, 155px)';
+    const GLOBE_SMALL = 'clamp(70px, 8.5vw, 105px)';
 
     const letterStyle = {
         fontFamily: "'Nunito', 'Outfit', sans-serif",
@@ -240,23 +240,6 @@ const LogoIntro = ({ logoImage = '/intro_animation/globe.png', onComplete }) => 
                                 >
                                     sti
                                 </motion.span>
-
-                                {/* Orange dot — sits above the 'i' (rightmost letter in 'sti') */}
-                                <motion.div
-                                    className="absolute rounded-full bg-[#F5A023]"
-                                    style={{
-                                        width: 'clamp(8px, 1.1vw, 14px)',
-                                        height: 'clamp(8px, 1.1vw, 14px)',
-                                        bottom: '100%',
-                                        marginBottom: 'clamp(4px, 0.6vw, 8px)',
-                                        right: 'clamp(2px, 0.5vw, 6px)',
-                                    }}
-                                    initial={{ scale: 0 }}
-                                    animate={
-                                        phase === 'step1' ? { scale: 0 }
-                                            : { scale: 1, transition: { duration: 0.4, ease: 'backOut', delay: 0.85 } }
-                                    }
-                                />
                             </div>
                         </div>
 
