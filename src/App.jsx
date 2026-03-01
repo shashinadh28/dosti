@@ -1,37 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import LogoIntro from './components/LogoIntro';
 import FloatingNavbar from './components/FloatingNavbar';
-import Hero from './components/Hero';
-import LeverageSection from './components/LeverageSection';
-import GlobalConnect from './components/GlobalConnect';
-import TalentChallenges from './components/TalentChallenges';
-import HiringProcess from './components/HiringProcess';
-import ServicesSection from './components/ServicesSection';
-import CTA from './components/CTA';
-import ContactPage from './components/ContactPage';
-import TeamPage from './components/TeamPage';
-import ITOutsourcingPage from './components/ITOutsourcingPage';
-import HealthcareBPOPage from './components/HealthcareBPOPage';
-import USTaxationPage from './components/USTaxationPage';
-import CloudSolutionsPage from './components/CloudSolutionsPage';
-import SaaSExpertsPage from './components/SaaSExpertsPage';
-import AISolutionsPage from './components/AISolutionsPage';
-import VirtualAssistantPage from './components/VirtualAssistantPage';
+import HomePage from './pages/HomePage/HomePage';
+import ContactPage from './pages/ContactPage';
+import TeamPage from './pages/TeamPage';
+import ITOutsourcingPage from './pages/ITOutsourcing/ITOutsourcingPage';
+import HealthcareBPOPage from './pages/HealthcareBPO/HealthcareBPOPage';
+import USTaxationPage from './pages/USTaxation/USTaxationPage';
+import CloudSolutionsPage from './pages/CloudSolutions/CloudSolutionsPage';
+import SaaSExpertsPage from './pages/SaaSExperts/SaaSExpertsPage';
+import AISolutionsPage from './pages/AISolutions/AISolutionsPage';
+import VirtualAssistantPage from './pages/VirtualAssistant/VirtualAssistantPage';
 import Footer from './components/Footer';
 import ServiceFooter from './components/ServiceFooter';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
 
-const HomePage = () => (
-  <>
-    <Hero />
-    <LeverageSection />
-    <GlobalConnect />
-    <ServicesSection />
-    <TalentChallenges />
-    <HiringProcess />
-    <CTA />
-  </>
-);
+
 
 const SERVICE_ROUTES = [
   '/it-outsourcing', '/healthcare-bpo', '/us-taxation', '/cloud-solutions',
@@ -41,6 +28,10 @@ const SERVICE_ROUTES = [
 const AppInner = () => {
   const location = useLocation();
   const isServicePage = SERVICE_ROUTES.includes(location.pathname);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div
@@ -65,6 +56,9 @@ const AppInner = () => {
           <Route path="/saas-experts" element={<SaaSExpertsPage />} />
           <Route path="/ai-solutions" element={<AISolutionsPage />} />
           <Route path="/virtual-assistant" element={<VirtualAssistantPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/cookies" element={<CookiePolicyPage />} />
         </Routes>
       </main>
       {isServicePage ? <ServiceFooter /> : <Footer />}
