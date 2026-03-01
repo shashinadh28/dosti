@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import WorldMap from './ui/WorldMap';
+import WorldMap from '../../components/ui/WorldMap';
 
 const EASE = [0.22, 1, 0.36, 1];
 

@@ -2,39 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import LogoIntro from './components/LogoIntro';
 import FloatingNavbar from './components/FloatingNavbar';
-import Hero from './components/Hero';
-import LeverageSection from './components/LeverageSection';
-import GlobalConnect from './components/GlobalConnect';
-import TalentChallenges from './components/TalentChallenges';
-import HiringProcess from './components/HiringProcess';
-import ServicesSection from './components/ServicesSection';
-import CTA from './components/CTA';
+import HomePage from './pages/HomePage/HomePage';
 import ContactPage from './pages/ContactPage';
 import TeamPage from './pages/TeamPage';
-import ITOutsourcingPage from './pages/ITOutsourcingPage';
-import HealthcareBPOPage from './pages/HealthcareBPOPage';
-import USTaxationPage from './pages/USTaxationPage';
-import CloudSolutionsPage from './pages/CloudSolutionsPage';
-import SaaSExpertsPage from './pages/SaaSExpertsPage';
-import AISolutionsPage from './pages/AISolutionsPage';
-import VirtualAssistantPage from './pages/VirtualAssistantPage';
+import ITOutsourcingPage from './pages/ITOutsourcing/ITOutsourcingPage';
+import HealthcareBPOPage from './pages/HealthcareBPO/HealthcareBPOPage';
+import USTaxationPage from './pages/USTaxation/USTaxationPage';
+import CloudSolutionsPage from './pages/CloudSolutions/CloudSolutionsPage';
+import SaaSExpertsPage from './pages/SaaSExperts/SaaSExpertsPage';
+import AISolutionsPage from './pages/AISolutions/AISolutionsPage';
+import VirtualAssistantPage from './pages/VirtualAssistant/VirtualAssistantPage';
 import Footer from './components/Footer';
 import ServiceFooter from './components/ServiceFooter';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
 
-const HomePage = () => (
-  <>
-    <Hero />
-    <LeverageSection />
-    <GlobalConnect />
-    <ServicesSection />
-    <TalentChallenges />
-    <HiringProcess />
-    <CTA />
-  </>
-);
+
 
 const SERVICE_ROUTES = [
   '/it-outsourcing', '/healthcare-bpo', '/us-taxation', '/cloud-solutions',
