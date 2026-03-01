@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import LogoIntro from './components/LogoIntro';
 import FloatingNavbar from './components/FloatingNavbar';
@@ -9,20 +9,20 @@ import TalentChallenges from './components/TalentChallenges';
 import HiringProcess from './components/HiringProcess';
 import ServicesSection from './components/ServicesSection';
 import CTA from './components/CTA';
-import ContactPage from './components/ContactPage';
-import TeamPage from './components/TeamPage';
-import ITOutsourcingPage from './components/ITOutsourcingPage';
-import HealthcareBPOPage from './components/HealthcareBPOPage';
-import USTaxationPage from './components/USTaxationPage';
-import CloudSolutionsPage from './components/CloudSolutionsPage';
-import SaaSExpertsPage from './components/SaaSExpertsPage';
-import AISolutionsPage from './components/AISolutionsPage';
-import VirtualAssistantPage from './components/VirtualAssistantPage';
+import ContactPage from './pages/ContactPage';
+import TeamPage from './pages/TeamPage';
+import ITOutsourcingPage from './pages/ITOutsourcingPage';
+import HealthcareBPOPage from './pages/HealthcareBPOPage';
+import USTaxationPage from './pages/USTaxationPage';
+import CloudSolutionsPage from './pages/CloudSolutionsPage';
+import SaaSExpertsPage from './pages/SaaSExpertsPage';
+import AISolutionsPage from './pages/AISolutionsPage';
+import VirtualAssistantPage from './pages/VirtualAssistantPage';
 import Footer from './components/Footer';
 import ServiceFooter from './components/ServiceFooter';
-import PrivacyPolicyPage from './components/PrivacyPolicyPage';
-import TermsOfServicePage from './components/TermsOfServicePage';
-import CookiePolicyPage from './components/CookiePolicyPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfServicePage from './pages/TermsOfServicePage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
 
 const HomePage = () => (
   <>
@@ -44,6 +44,10 @@ const SERVICE_ROUTES = [
 const AppInner = () => {
   const location = useLocation();
   const isServicePage = SERVICE_ROUTES.includes(location.pathname);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div
