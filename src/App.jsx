@@ -20,6 +20,9 @@ import AISolutionsPage from './components/AISolutionsPage';
 import VirtualAssistantPage from './components/VirtualAssistantPage';
 import Footer from './components/Footer';
 import ServiceFooter from './components/ServiceFooter';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsOfServicePage from './components/TermsOfServicePage';
+import CookiePolicyPage from './components/CookiePolicyPage';
 
 const HomePage = () => (
   <>
@@ -65,6 +68,9 @@ const AppInner = () => {
           <Route path="/saas-experts" element={<SaaSExpertsPage />} />
           <Route path="/ai-solutions" element={<AISolutionsPage />} />
           <Route path="/virtual-assistant" element={<VirtualAssistantPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms" element={<TermsOfServicePage />} />
+          <Route path="/cookies" element={<CookiePolicyPage />} />
         </Routes>
       </main>
       {isServicePage ? <ServiceFooter /> : <Footer />}

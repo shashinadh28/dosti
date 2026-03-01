@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ServiceFooter = () => (
     <footer className="bg-white border-t border-gray-100 py-12">
@@ -104,9 +105,9 @@ const ServiceFooter = () => (
             <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                 <p className="text-gray-400 text-xs">© 2025 Dhosti Global Workforce Solutions Pvt Ltd. All rights reserved.</p>
                 <div className="flex flex-wrap justify-center sm:justify-end gap-4">
-                    {['Privacy', 'Terms', 'Cookies'].map(l => (
-                        <a key={l} href="#" className="text-gray-400 text-xs hover:text-gray-600 transition-colors">{l}</a>
-                    ))}
+                    <Link to="/privacy" className="text-gray-400 text-xs hover:text-gray-600 transition-colors">Privacy</Link>
+                    <Link to="/terms" className="text-gray-400 text-xs hover:text-gray-600 transition-colors">Terms</Link>
+                    <Link to="/cookies" className="text-gray-400 text-xs hover:text-gray-600 transition-colors">Cookies</Link>
                 </div>
             </div>
         </div>
